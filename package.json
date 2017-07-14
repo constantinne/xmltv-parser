@@ -10,10 +10,7 @@
   "scripts": {
     "test": "node ./node_modules/eslint/bin/eslint.js src/index.js  && node ./node_modules/jasmine/bin/jasmine.js"
   },
-  "keywords": [
-    "xmltv",
-    "parser"
-  ],
+  "keywords": ["xmltv", "parser"],
   "author": "Nicolas Chevolot",
   "license": "ISC",
   "devDependencies": {
@@ -26,6 +23,6 @@
   },
   "dependencies": {
     "moment": "2.17.0",
-    "saxo-parser": "1.0.1"
+    "constantinne/saxo-parser": "1.0.1"
   }
 }
