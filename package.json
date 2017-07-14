@@ -23,6 +23,6 @@
   },
   "dependencies": {
     "moment": "2.17.0",
-    "constantinne/saxo-parser": "1.0.1"
+    "https://github.com/constantinne/saxo-parser": "1.0.1"
   }
 }
