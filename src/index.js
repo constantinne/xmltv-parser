@@ -24,8 +24,8 @@ var Prog = function (channel) {
   this.chan = channel;
   this.cat = [];
   this.credits = [];
-  this.titles = [];
-  this.descriptions = [];
+  this.titles = {};
+  this.descriptions = {};
 };
 
 Prog.prototype.setMoment = function (start, end) {
@@ -89,10 +89,7 @@ XmltvParser.prototype.createConfiguration = function () {
       'title': function (tag) {
         var prog = tag.parent.prog;
         prog.title = tag.text;
-        prog.titles.push({
-          lang: tag.attributes.lang,
-          text: tag.text
-        });
+        prog.titles[tag.attributes.lang] = tag.text;
       },
 
       'sub-title': function (tag) {
@@ -103,10 +100,7 @@ XmltvParser.prototype.createConfiguration = function () {
       'desc': function (tag) {
         var prog = tag.parent.prog;
         prog.desc = tag.text;
-        prog.descriptions.push({
-          lang: tag.attributes.lang,
-          text: tag.text
-        });
+        prog.descriptions[tag.attributes.lang] = tag.text;
       },
 
       'category': function (tag) {
