@@ -88,8 +88,10 @@ XmltvParser.prototype.createConfiguration = function () {
 
       'title': function (tag) {
         var prog = tag.parent.prog;
+        var lang = tag.attributes.lang || 'EN';
+        lang = lang.toUpperCase();
         prog.title = tag.text;
-        prog.titles[tag.attributes.lang] = tag.text;
+        prog.titles[lang] = tag.text;
       },
 
       'sub-title': function (tag) {
@@ -99,8 +101,10 @@ XmltvParser.prototype.createConfiguration = function () {
 
       'desc': function (tag) {
         var prog = tag.parent.prog;
+        var lang = tag.attributes.lang || 'EN';
+        lang = lang.toUpperCase();
         prog.desc = tag.text;
-        prog.descriptions[tag.attributes.lang] = tag.text;
+        prog.descriptions[lang] = tag.text;
       },
 
       'category': function (tag) {
